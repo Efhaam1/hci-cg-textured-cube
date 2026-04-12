@@ -1,0 +1,23 @@
+{
+  "name": "hci-cg-textured-cube",
+  "private": true,
+  "version": "0.0.0",
+  "homepage": "https://<your-username>.github.io/hci-cg-textured-cube/",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "deploy": "gh-pages -d dist"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "@react-three/fiber": "^8.15.0",
+    "@react-three/drei": "^9.88.0",
+    "three": "^0.160.0"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0",
+    "@vitejs/plugin-react": "^4.0.0",
+    "gh-pages": "^6.0.0"
+  }
+}
