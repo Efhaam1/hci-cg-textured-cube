@@ -1,4 +1,4 @@
 npm install
 npm run
 
-<img width="1402" height="1122" alt="image" src="https://github.com/user-attachments/assets/50c26cc0-251e-4d06-a57f-ee6ecb238060" />
+<img width="1501" height="772" alt="image" src="https://github.com/user-attachments/assets/96473454-a76d-4413-a6b6-66c1b386d34c" />
