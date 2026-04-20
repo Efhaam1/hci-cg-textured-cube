@@ -1,11 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>3D Cube</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
-</html>
+<script type="module">
+import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js";
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x000000);
+
+// Camera
+const camera = new THREE.PerspectiveCamera(
+  75,
+  window.innerWidth / window.innerHeight,
+  0.1,
+  1000
+);
+
+// Renderer
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setSize(window.innerWidth, window.innerHeight);
+document.body.appendChild(renderer.domElement);
+
+// 🔥 Bright material (THIS is key)
+const geometry = new THREE.BoxGeometry();
+const material = new THREE.MeshStandardMaterial({
+  color: 0xff5500,
+  emissive: 0x331100,   // glow effect
+  metalness: 0.6,
+  roughness: 0.2
+});
+
+const cube = new THREE.Mesh(geometry, material);
+scene.add(cube);
+
+// 💡 Strong lighting
+const light1 = new THREE.PointLight(0xffffff, 2);
+light1.position.set(5, 5, 5);
+scene.add(light1);
+
+const light2 = new THREE.PointLight(0xffffff, 2);
+light2.position.set(-5, -5, -5);
+scene.add(light2);
+
+// Ambient light to remove dullness
+const ambient = new THREE.AmbientLight(0xffffff, 0.5);
+scene.add(ambient);
+
+camera.position.z = 5;
+
+// Animation
+function animate() {
+  requestAnimationFrame(animate);
+
+  cube.rotation.x += 0.02;
+  cube.rotation.y += 0.02;
+
+  renderer.render(scene, camera);
+}
+
+animate();
+</script>
+<div style="position:absolute; bottom:20px; width:100%; text-align:center; color:white;">
+Efhaam Ahsan - B22110006037
+</div>
